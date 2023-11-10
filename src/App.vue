@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>This is my new application.</h1>
-    <Users />
   </div>
 </template>
 
