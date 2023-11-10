@@ -1,15 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Contact from "./../pages/Contact.vue"
+
+import Home from './../pages/Home.vue'
+import About from './../pages/About.vue'
+import Posts from './../pages/Posts.vue'
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/posts', component: Posts }
+]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: Contact
-    }
-  ]
+  routes
 })
 
 export default router

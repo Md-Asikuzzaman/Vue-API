@@ -1,17 +1,54 @@
 <template>
-  <div>
-    <h1>This is my new application.</h1>
-  </div>
+  <header>
+    <ul>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/about">About</router-link></li>
+      <li><router-link to="/posts">Posts</router-link></li>
+    </ul>
+  </header>
+  <main class="container">
+    <router-view></router-view>
+  </main>
 </template>
 
-<script setup>
-import Users from './components/Users.vue'
-</script>
+<script setup></script>
 
-<style lang="css" scoped>
-h1 {
-  color: orange;
-  text-align: center;
+<style lang="css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
   font-family: arial;
+}
+
+header {
+  background-color: blueviolet;
+}
+
+ul {
+  display: flex;
+  min-height: 80px;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 140px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #cccccc;
+  font-size: 1.2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.router-link-active {
+  color: #fff;
 }
 </style>
