@@ -48,7 +48,7 @@ ul li a {
   padding: 0 20px;
 }
 
-.router-link-active {
+.option--active {
   color: #fff;
 }
 </style>

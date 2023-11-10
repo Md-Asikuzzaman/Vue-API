@@ -43,4 +43,9 @@ onMounted(() => {
   color: white;
   margin-top: 30px;
 }
+
+h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
 </style>
