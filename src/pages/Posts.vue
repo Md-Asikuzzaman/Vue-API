@@ -1,6 +1,7 @@
 <template>
   <div class="posts__container">
-    <Post v-for="post in posts" :key="post.id" :username="post.username" :email="post.email" />
+    <Post v-if="!loading" v-for="post in posts" :key="post.id" :post="post" />
+    <h2 v-else>Loading...</h2>
   </div>
 </template>
 
@@ -9,6 +10,7 @@ import Post from './../components/Post.vue'
 import { ref, onMounted } from 'vue'
 
 const posts = ref([])
+const loading = ref(true)
 
 const fetchPosts = async () => {
   try {
@@ -16,6 +18,7 @@ const fetchPosts = async () => {
     const data = await response.json()
 
     posts.value = data
+    loading.value = false
   } catch (error) {
     console.log(error)
   }

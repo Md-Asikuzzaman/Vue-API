@@ -1,16 +1,17 @@
 <template>
   <div class="card">
-    <h2>User: {{ username }}</h2>
-    <h2>Email: {{ email }}</h2>
-    <button class="card__btn">Details</button>
+    <h2>User: {{ post.username }}</h2>
+    <h2>Email: {{ post.email }}</h2>
+    <button class="card__btn" @click="$router.push(`posts/${post.id}`)">Posts</button>
   </div>
 </template>
+
 <script setup>
 defineProps({
-  username: String,
-  email: String
+  post: Object
 })
 </script>
+
 <style lang="css" scoped>
 .card {
   background: linear-gradient(-45deg, rgb(109, 2, 210), blueviolet);
@@ -20,7 +21,7 @@ defineProps({
 }
 
 h2 {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .card__btn {
@@ -30,5 +31,9 @@ h2 {
   outline: none;
   border-radius: 99px;
   margin-top: 20px;
+  background-color: #fff;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
 }
 </style>
